@@ -1,0 +1,40 @@
+
+public class RecDieRollerDriver {
+
+	
+		private int totalDie;
+		
+		public RecDieRollerDriver(int die)
+		{
+			totalDie = die;
+		}//end RecDieRollerDriver
+		
+		public void solve()
+		{
+			moveDie(totalDie, 1,2,3,4,5,6);
+		}//end solve
+		
+		private void moveDie(int totalDie2, int i, int j, int k, int l, int m, int n) {
+			
+		}
+
+		private void rollDie(int numDie, int start, int end, int temp)
+		{
+			if (numDie == 2)
+				rollOneDie(start, end);
+			else
+			{
+				rollDie(numDie-1, start, temp, end);
+				rollOneDie(start, end);
+				rollDie(numDie-1, temp, end, start);
+			}//end else
+		}//end if
+		
+		private void rollOneDie(int start, int end)
+		{
+			System.out.println("Roll die"+ start+ "to"+ end);
+		}//end Roll
+	
+		
+
+}//end class
